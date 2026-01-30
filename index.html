@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTA — Business Technology Association</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="logo">
+        <img src="assets/logo-dark.png" alt="bta - Business Technology Association" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#who" class="nav-link" data-i18n="nav.who">Who We Are</a></li>
+        <li><a href="#events" class="nav-link" data-i18n="nav.events">Events</a></li>
+        <li><a href="#team" class="nav-link" data-i18n="nav.team">The Team</a></li>
+        <li><a href="#photos" class="nav-link" data-i18n="nav.photos">Photos</a></li>
+        <li><a href="#faq" class="nav-link" data-i18n="nav.faq">FAQ</a></li>
+      </ul>
+      <div class="preferences-wrap">
+        <button type="button" class="preferences-btn" aria-label="Preferences" aria-expanded="false" aria-haspopup="true" data-i18n="preferences.btn">
+          Preferences
+        </button>
+        <div class="preferences-panel" id="preferences-panel" role="dialog" aria-label="Preferences" aria-hidden="true">
+          <div class="preferences-section">
+            <span class="preferences-label" data-i18n="preferences.theme">Theme</span>
+            <div class="preferences-options">
+              <button type="button" class="pref-option theme-option active" data-theme="dark" aria-pressed="true">Dark</button>
+              <button type="button" class="pref-option theme-option" data-theme="light" aria-pressed="false">Light</button>
+            </div>
+          </div>
+          <div class="preferences-section">
+            <span class="preferences-label" data-i18n="preferences.language">Language</span>
+            <div class="preferences-options">
+              <button type="button" class="pref-option lang-option active" data-lang="en" aria-pressed="true">English</button>
+              <button type="button" class="pref-option lang-option" data-lang="fr-CA" aria-pressed="false">Français</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg">
+        <div class="hero-node hero-node-1" aria-hidden="true"></div>
+        <div class="hero-node hero-node-2" aria-hidden="true"></div>
+        <div class="hero-node hero-node-3" aria-hidden="true"></div>
+        <div class="hero-node hero-node-4" aria-hidden="true"></div>
+        <div class="hero-node hero-node-5" aria-hidden="true"></div>
+        <div class="hero-node hero-node-6" aria-hidden="true"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-logo">
+          <img src="assets/logo-dark.png" alt="" class="hero-logo-img">
+        </div>
+        <h1>Business Technology Association</h1>
+        <a href="#who" class="btn btn-primary" data-i18n="hero.learnMore">Learn More</a>
+      </div>
+    </section>
+
+    <section id="who" class="section who">
+      <div class="container">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            <div class="who-icon">◆</div>
+            <h3>Our Mission</h3>
+            <p>BTA bridges the gap between business strategy and technology. We help members understand how tech drives growth, innovation, and efficiency in the modern workplace.</p>
+          </div>
+          <div class="who-card">
+            <div class="who-icon">◇</div>
+            <h3>What We Do</h3>
+            <p>Workshops, speaker events, hackathons, and networking. We explore AI, data, automation, and digital transformation—always with a business lens.</p>
+          </div>
+          <div class="who-card">
+            <div class="who-icon">○</div>
+            <h3>Who It's For</h3>
+            <p>Students and professionals who care about the intersection of business and tech. No coding required—curiosity and ambition are enough.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section events">
+      <div class="container">
+        <h2 class="section-title" data-i18n="events.title">Upcoming Events</h2>
+        <p class="section-subtitle" data-i18n="events.subtitle">Winter 2026</p>
+        <div class="events-list">
+          <article class="event-card">
+            <div class="event-date">
+              <span class="event-day">31</span>
+              <span class="event-month">Jan</span>
+            </div>
+            <div class="event-details">
+              <h3>Bridge to Success</h3>
+              <p class="event-location">National Arts Centre · 12:30 PM</p>
+              <p>Dynamic sessions led by industry professionals, purposeful networking with recruiters and mentors, career-focused activities to help you stand out, and a formal dinner to connect and reflect in an elegant setting.</p>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-date">
+              <span class="event-day">28</span>
+              <span class="event-month">Feb</span>
+            </div>
+            <div class="event-details">
+              <h3>Business Technology Case Competition</h3>
+              <p class="event-location">Full-day event</p>
+              <p>Tech-focused case cracking, networking with professionals, and an industry panel.</p>
+            </div>
+          </article>
+          <article class="event-card">
+            <div class="event-date">
+              <span class="event-day">25</span>
+              <span class="event-month">Mar</span>
+            </div>
+            <div class="event-details">
+              <h3>Tech Workshop</h3>
+              <p>Possible topics: How to Build a Startup Idea Using AI in 45 Minutes; No-Code Tools Every Business Student Should Know; "Build a Business in 1 Hour" Using AI.</p>
+            </div>
+          </article>
+          <article class="event-card event-tentative">
+            <div class="event-date">
+              <span class="event-day">TBD</span>
+              <span class="event-month">Mar</span>
+            </div>
+            <div class="event-details">
+              <h3>Tech Panel <span class="tentative">(Tentative)</span></h3>
+              <p>AI &amp; Emerging Technologies.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section team">
+      <div class="container">
+        <h2 class="section-title" data-i18n="team.title">The Team</h2>
+        <p class="section-subtitle" data-i18n="team.subtitle">The people behind BTA</p>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Presidential</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>A</span></div>
+              <h4 class="team-name">Alexandra Ganguli</h4>
+              <p class="team-role">Co-President</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>A</span></div>
+              <h4 class="team-name">Aahana Bagga</h4>
+              <p class="team-role">Co-President</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Marketing</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>N</span></div>
+              <h4 class="team-name">Nikolas Shterne</h4>
+              <p class="team-role">Vice President of Marketing</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>W</span></div>
+              <h4 class="team-name">Wanees Fatine</h4>
+              <p class="team-role">Director of Content Creation</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>K</span></div>
+              <h4 class="team-name">Kanishka Bagga</h4>
+              <p class="team-role">Director of Marketing</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Internal Affairs</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>Z</span></div>
+              <h4 class="team-name">Zaina Rahman</h4>
+              <p class="team-role">Vice President of Internal Affairs</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>M</span></div>
+              <h4 class="team-name">Meka Umakanthan</h4>
+              <p class="team-role">First Year Representative</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>R</span></div>
+              <h4 class="team-name">Rahaf Alsemlghi</h4>
+              <p class="team-role">First Year Representative</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Development</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>R</span></div>
+              <h4 class="team-name">Reema Alwadi</h4>
+              <p class="team-role">Vice President of Development</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Finance</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>B</span></div>
+              <h4 class="team-name">Benjamin Whiting</h4>
+              <p class="team-role">Vice President of Finance</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>F</span></div>
+              <h4 class="team-name">Fatima Jan</h4>
+              <p class="team-role">Director of Finance</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Corporate Affairs</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>L</span></div>
+              <h4 class="team-name">Luka Bernabo</h4>
+              <p class="team-role">Vice President of Corporate Affairs</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>D</span></div>
+              <h4 class="team-name">Destin Mwaiteleke</h4>
+              <p class="team-role">Director of Corporate Affairs</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>M</span></div>
+              <h4 class="team-name">Maryann Issac</h4>
+              <p class="team-role">Director of Corporate Affairs</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="team-dept">
+          <h3 class="team-dept-title">Events</h3>
+          <div class="team-grid">
+            <article class="team-card">
+              <div class="team-avatar"><span>A</span></div>
+              <h4 class="team-name">Ayan Arwo</h4>
+              <p class="team-role">Vice President of Events</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>A</span></div>
+              <h4 class="team-name">Arya Reza</h4>
+              <p class="team-role">Director of Events</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>D</span></div>
+              <h4 class="team-name">Dea Colic</h4>
+              <p class="team-role">Director of Events</p>
+            </article>
+            <article class="team-card">
+              <div class="team-avatar"><span>S</span></div>
+              <h4 class="team-name">Siobhan Morgan-Tracy</h4>
+              <p class="team-role">Director of Events</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="companies" class="section companies">
+      <div class="container">
+        <h2 class="section-title">Companies We've Worked With</h2>
+        <p class="section-subtitle">Partners and sponsors</p>
+        <div class="companies-carousel" aria-label="Partner companies">
+          <button type="button" class="companies-btn companies-prev" aria-label="Previous">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <button type="button" class="companies-btn companies-next" aria-label="Next">
+            <span aria-hidden="true">›</span>
+          </button>
+          <div class="companies-viewport">
+            <div class="companies-track">
+              <div class="company-slide">
+                <div class="company-logo">
+                  <img src="assets/partners/iloop.png" alt="Iloop">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo">
+                  <img src="assets/partners/microsoft.png" alt="Microsoft">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo">
+                  <img src="assets/partners/cgi.png" alt="CGI">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo" data-company="deloitte">
+                  <img src="assets/partners/deloitte.png" alt="Deloitte" decoding="async">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo">
+                  <img src="assets/partners/ibm.png" alt="IBM">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo">
+                  <img src="assets/partners/accenture.png" alt="Accenture">
+                </div>
+              </div>
+              <div class="company-slide">
+                <div class="company-logo" data-company="pwc">
+                  <img src="assets/partners/pwc.png" alt="PwC" decoding="async">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos" class="section photos">
+      <div class="carousel" aria-label="Team photos carousel">
+        <button type="button" class="carousel-btn carousel-prev" aria-label="Previous photo">
+          <span aria-hidden="true">‹</span>
+        </button>
+        <button type="button" class="carousel-btn carousel-next" aria-label="Next photo">
+          <span aria-hidden="true">›</span>
+        </button>
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <div class="carousel-slide"><img src="assets/photos/photo-14.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-3.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-7.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-2.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-17.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-9.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-5.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-1.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-13.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-8.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-6.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-15.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-4.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-20.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-10.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-12.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-18.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-11.png" alt="BTA team photo"></div>
+            <div class="carousel-slide"><img src="assets/photos/photo-16.png" alt="BTA team photo"></div>
+          </div>
+        </div>
+        <div class="carousel-dots" role="tablist" aria-label="Photo slides"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq">
+      <div class="container">
+        <h2 class="section-title">FAQ</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>How do I join BTA?</summary>
+            <p>Come to any of our events or sign up through our membership form. We welcome everyone interested in business and technology.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do I need a tech background?</summary>
+            <p>No. BTA is for anyone curious about how technology shapes business. We cover concepts in an accessible way and offer beginner-friendly workshops.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Is there a membership fee?</summary>
+            <p>Membership is free for students. Some special events or workshops may have a small fee to cover materials or venue costs.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can I get involved as a volunteer or leader?</summary>
+            <p>Reach out to our exec team at events or via email. We often look for event helpers, content creators, and future committee members.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where are events held?</summary>
+            <p>Most events are on campus. Check each event listing for the exact room or venue. We also host occasional virtual sessions.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+    <button type="button" class="back-to-top" aria-label="Back to top" title="Back to top">
+      <span class="back-to-top-icon">↑</span>
+    </button>
+  </main>
+
+  <div id="easter-toast" class="easter-toast" aria-live="polite" hidden></div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="assets/logo-dark.png" alt="bta" class="footer-logo-img">
+        <span data-i18n="footer.name">BTA — Business Technology Association</span>
+      </div>
+      <p class="footer-copy" data-i18n="footer.copyright">© 2026 BTA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="photo-lightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged photo" aria-hidden="true">
+    <button type="button" class="photo-lightbox-close" aria-label="Close">×</button>
+    <div class="photo-lightbox-backdrop"></div>
+    <img src="" alt="BTA team photo" class="photo-lightbox-img">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
