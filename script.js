@@ -1,113 +1,11 @@
 (function () {
   'use strict';
 
-  // ----- Translations (EN / Canadian French) -----
-  var translations = {
-    en: {
-      'nav.who': 'Who We Are',
-      'nav.events': 'Events',
-      'nav.team': 'The Team',
-      'nav.photos': 'Photos',
-      'nav.faq': 'FAQ',
-      'hero.tagline': 'Where business meets technology. Connect, learn, and lead.',
-      'hero.learnMore': 'Learn More',
-      'who.title': 'Who We Are',
-      'who.missionTitle': 'Our Mission',
-      'who.missionText': 'BTA bridges the gap between business strategy and technology. We help members understand how tech drives growth, innovation, and efficiency in the modern workplace.',
-      'who.whatTitle': 'What We Do',
-      'who.whatText': 'Workshops, speaker events, hackathons, and networking. We explore AI, data, automation, and digital transformation—always with a business lens.',
-      'who.forTitle': "Who It's For",
-      'who.forText': 'Students and professionals who care about the intersection of business and tech. No coding required—curiosity and ambition are enough.',
-      'events.title': 'Upcoming Events',
-      'events.subtitle': 'Winter 2026',
-      'team.title': 'The Team',
-      'team.subtitle': 'The people behind BTA',
-      'companies.title': "Companies We've Worked With",
-      'companies.subtitle': 'Partners and sponsors',
-      'photos.title': 'Fun Photos',
-      'photos.subtitle': 'Behind the scenes with the BTA team',
-      'faq.title': 'FAQ',
-      'faq.q1': 'How do I join BTA?',
-      'faq.a1': 'Come to any of our events or sign up through our membership form. We welcome everyone interested in business and technology.',
-      'faq.q2': 'Do I need a tech background?',
-      'faq.a2': 'No. BTA is for anyone curious about how technology shapes business. We cover concepts in an accessible way and offer beginner-friendly workshops.',
-      'faq.q3': 'Is there a membership fee?',
-      'faq.a3': 'Membership is free for students. Some special events or workshops may have a small fee to cover materials or venue costs.',
-      'faq.q4': 'How can I get involved as a volunteer or leader?',
-      'faq.a4': 'Reach out to our exec team at events or via email. We often look for event helpers, content creators, and future committee members.',
-      'faq.q5': 'Where are events held?',
-      'faq.a5': 'Most events are on campus. Check each event listing for the exact room or venue. We also host occasional virtual sessions.',
-      'footer.name': 'BTA — Business Technology Association',
-      'footer.copyright': '© 2026 BTA. All rights reserved.',
-      'preferences.btn': 'Preferences',
-      'preferences.theme': 'Theme',
-      'preferences.language': 'Language'
-    },
-    'fr-CA': {
-      'nav.who': 'Qui nous sommes',
-      'nav.events': 'Événements',
-      'nav.team': 'L\'équipe',
-      'nav.photos': 'Photos',
-      'nav.faq': 'FAQ',
-      'hero.tagline': 'Là où les affaires rencontrent la technologie. Connectez-vous, apprenez et menez.',
-      'hero.learnMore': 'En savoir plus',
-      'who.title': 'Qui nous sommes',
-      'who.missionTitle': 'Notre mission',
-      'who.missionText': 'BTA comble l\'écart entre la stratégie d\'affaires et la technologie. Nous aidons les membres à comprendre comment la technologie stimule la croissance, l\'innovation et l\'efficacité en milieu de travail.',
-      'who.whatTitle': 'Ce que nous faisons',
-      'who.whatText': 'Ateliers, conférences, hackathons et réseautage. Nous explorons l\'IA, les données, l\'automatisation et la transformation numérique—toujours avec une perspective d\'affaires.',
-      'who.forTitle': 'Pour qui',
-      'who.forText': 'Étudiants et professionnels intéressés par l\'intersection des affaires et de la technologie. Aucun codage requis—curiosité et ambition suffisent.',
-      'events.title': 'Prochains événements',
-      'events.subtitle': 'Hiver 2026',
-      'team.title': 'L\'équipe',
-      'team.subtitle': 'Les gens derrière BTA',
-      'companies.title': 'Entreprises avec lesquelles nous avons travaillé',
-      'companies.subtitle': 'Partenaires et commanditaires',
-      'photos.title': 'Photos amusantes',
-      'photos.subtitle': 'Dans les coulisses avec l\'équipe BTA',
-      'faq.title': 'FAQ',
-      'faq.q1': 'Comment rejoindre BTA?',
-      'faq.a1': 'Participez à l\'un de nos événements ou inscrivez-vous via notre formulaire d\'adhésion. Nous accueillons toute personne intéressée par les affaires et la technologie.',
-      'faq.q2': 'Ai-je besoin d\'un bagage technique?',
-      'faq.a2': 'Non. BTA s\'adresse à toute personne curieuse de la façon dont la technologie façonne les affaires. Nous présentons les concepts de manière accessible et offrons des ateliers pour débutants.',
-      'faq.q3': 'Y a-t-il des frais d\'adhésion?',
-      'faq.a3': 'L\'adhésion est gratuite pour les étudiants. Certains événements ou ateliers peuvent avoir des frais pour couvrir le matériel ou les locaux.',
-      'faq.q4': 'Comment m\'impliquer comme bénévole ou leader?',
-      'faq.a4': 'Contactez notre équipe dirigeante lors des événements ou par courriel. Nous recherchons souvent des aides aux événements, des créateurs de contenu et des membres pour les comités.',
-      'faq.q5': 'Où ont lieu les événements?',
-      'faq.a5': 'La plupart des événements ont lieu sur le campus. Consultez chaque annonce pour la salle ou le lieu exact. Nous offrons aussi occasionnellement des séances virtuelles.',
-      'footer.name': 'BTA — Association affaires et technologie',
-      'footer.copyright': '© 2026 BTA. Tous droits réservés.',
-      'preferences.btn': 'Préférences',
-      'preferences.theme': 'Thème',
-      'preferences.language': 'Langue'
-    }
-  };
-
-  function applyLanguage(lang) {
-    var doc = document.documentElement;
-    doc.setAttribute('lang', lang === 'fr-CA' ? 'fr' : 'en');
-    doc.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n');
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
-    doc.querySelectorAll('.lang-option').forEach(function (btn) {
-      var btnLang = btn.getAttribute('data-lang');
-      btn.classList.toggle('active', btnLang === lang);
-      btn.setAttribute('aria-pressed', btnLang === lang);
-    });
-    try { localStorage.setItem('bta-lang', lang); } catch (e) {}
-  }
-
   function applyTheme(theme) {
     var doc = document.documentElement;
     doc.setAttribute('data-theme', theme);
-    var logoDark = 'assets/logo-dark.png';
     var logoLight = 'assets/logo-light.png';
-    var logoSrc = theme === 'dark' ? logoLight : logoDark;
+    var logoSrc = logoLight;
     document.querySelectorAll('.logo-img, .hero-logo-img, .footer-logo-img').forEach(function (img) {
       if (img) img.src = logoSrc;
     });
@@ -115,15 +13,10 @@
   }
 
   var savedTheme = null;
-  var savedLang = null;
   try {
     savedTheme = localStorage.getItem('bta-theme');
-    savedLang = localStorage.getItem('bta-lang');
   } catch (e) {}
   applyTheme(savedTheme === 'light' || savedTheme === 'dark' ? savedTheme : 'dark');
-  if (savedLang === 'fr-CA' || savedLang === 'en') {
-    applyLanguage(savedLang);
-  }
 
   function syncThemePanel(theme) {
     document.querySelectorAll('.theme-option').forEach(function (btn) {
@@ -157,12 +50,6 @@
         applyTheme(theme);
         syncThemePanel(theme);
       }
-    });
-  });
-  document.querySelectorAll('.lang-option').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var lang = btn.getAttribute('data-lang');
-      if (lang) applyLanguage(lang);
     });
   });
 
