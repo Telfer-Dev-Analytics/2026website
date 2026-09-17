@@ -127,18 +127,79 @@ a:hover {
   gap: 2rem;
 }
 
-.nav-links a {
+.nav-links .nav-link {
   color: var(--gray-light);
   font-weight: 500;
   font-size: 0.95rem;
   transition: color 0.2s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links .nav-link:hover,
+.nav-links .nav-link.active {
   color: var(--purple-bright);
   font-weight: 600;
   box-shadow: 0 2px 0 var(--purple-mid);
+}
+
+.events-dropdown-wrap {
+  position: relative;
+}
+
+.events-dropdown-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.events-dropdown-btn[aria-expanded="true"] {
+  color: var(--purple-bright);
+}
+
+.events-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.5rem;
+  background: var(--black-card);
+  border: 1px solid rgba(107, 33, 168, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.2s, visibility 0.2s, transform 0.2s;
+}
+
+.events-dropdown-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.events-dropdown-panel[aria-hidden="true"] {
+  pointer-events: none;
+}
+
+.events-dropdown-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  color: var(--gray-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.events-dropdown-link:hover {
+  color: var(--purple-bright);
+  background: rgba(107, 33, 168, 0.15);
 }
 
 /* ----- Preferences button & panel ----- */
@@ -376,6 +437,11 @@ a:hover {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.section:empty {
+  padding: 0;
+  margin: 0;
 }
 
 .section.reveal {
@@ -890,6 +956,14 @@ a:hover {
   margin-top: 2rem;
 }
 
+.events-subsection {
+  margin-bottom: 3rem;
+}
+
+.events-subsection:last-child {
+  margin-bottom: 0;
+}
+
 .event-card {
   display: flex;
   gap: 1.5rem;
@@ -961,6 +1035,118 @@ a:hover {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--gray);
+}
+
+/* ----- Contact ----- */
+.contact .container {
+  text-align: center;
+}
+
+.contact .section-subtitle {
+  margin: 0 0 2.5rem;
+}
+
+.section-eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--purple-bright);
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+  background: var(--black-card);
+  border: 1px solid rgba(107, 33, 168, 0.25);
+  border-radius: var(--radius-lg);
+}
+
+.contact-email-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(107, 33, 168, 0.2);
+  color: var(--gray-light);
+}
+
+.contact-email-line a {
+  color: var(--gray-light);
+}
+
+.contact-email-line a:hover {
+  color: var(--purple-bright);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-light);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  color: var(--white);
+  background: var(--black-soft);
+  border: 1px solid rgba(107, 33, 168, 0.3);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid var(--purple-mid);
+  outline-offset: 1px;
+}
+
+.form-error {
+  min-height: 1.1em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple-bright);
+}
+
+.contact-submit {
+  align-self: flex-start;
+}
+
+.contact-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.contact-submit:disabled:hover {
+  transform: none;
+}
+
+.contact-submit:focus-visible {
+  outline: 2px solid var(--purple-mid);
+  outline-offset: 2px;
+}
+
+.contact-submit-status {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--gray-light);
 }
 
 /* ----- FAQ ----- */
@@ -1064,6 +1250,28 @@ a:hover {
   margin: 0;
   color: var(--gray);
   font-size: 0.875rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social-link {
+  display: flex;
+  color: var(--gray-light);
+  transition: color 0.2s;
+}
+
+.footer-social-link:hover {
+  color: var(--purple-bright);
+}
+
+.footer-social-link:focus-visible {
+  outline: 2px solid var(--purple-mid);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* ----- Back to top ----- */
