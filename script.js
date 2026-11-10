@@ -321,7 +321,7 @@
   'use strict';
 
   // ----- Contact form -----
-  var CONTACT_EMAIL = 'simaz.asaad@telferbta.com';
+  var CONTACT_EMAIL = 'info@telferbta.com';
   var CONTACT_ENDPOINT = null;
 
   var form = document.getElementById('contact-form');
